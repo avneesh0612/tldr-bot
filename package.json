@@ -6,7 +6,7 @@
     "watch": "tsup --watch",
     "build": "tsup && prisma generate",
     "dev": "nodemon dist/index.js",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "npx prisma generate && cross-env NODE_ENV=production node dist/index.js",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix"
   },
