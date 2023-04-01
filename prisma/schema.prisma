@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model Server {
+  id                  String   @id @default(uuid())
+  server_id           String   @unique
+  blacklisted_members String[]
+  blacklisted_roles   String[]
+}
